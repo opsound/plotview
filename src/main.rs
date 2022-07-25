@@ -27,7 +27,7 @@ struct Args {
 }
 
 fn read_svg(path: &Utf8Path) -> anyhow::Result<usvg::Tree> {
-    println!("reading {}...", path);
+    println!("reading {}", path);
     let now = Instant::now();
     let svg_data = std::fs::read(path)?;
     let opt = usvg::Options::default();
@@ -59,7 +59,7 @@ fn main() -> anyhow::Result<()> {
         }
     });
 
-    println!("allocating buffers...");
+    println!("allocating buffers");
     let now = Instant::now();
     let PhysicalSize { width, height } = window.inner_size();
     let surface_texture = SurfaceTexture::new(width, height, &window);
@@ -77,7 +77,7 @@ fn main() -> anyhow::Result<()> {
             }
             Event::RedrawRequested(window_id) if window_id == window.id() => {
                 let PhysicalSize { width, height } = window.inner_size();
-                println!("redrawing at {width}x{height}...");
+                println!("redrawing at {width}x{height}");
                 let now = Instant::now();
                 pixbuf.resize_surface(width, height);
                 pixbuf.resize_buffer(width, height);
