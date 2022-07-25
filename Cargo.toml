@@ -6,3 +6,12 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+anyhow = "1.0.58"
+camino = "1.0.9"
+clap = { version = "3.2.14", features = ["derive"] }
+notify = "4.0.17"
+pixels = "0.9.0"
+resvg = "0.23.0"
+tiny-skia = "0.6.0"
+usvg = "0.23.0"
+winit = "0.26.1"
